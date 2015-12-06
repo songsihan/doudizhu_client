@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" width="180" height="47">
+	<w:HostComponent name="egret.gui.Button"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="up"/>
+		<e:State name="down"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:Rect bottom="0" left="0" top="0" right="0" includeIn="down" x="20" y="20" fillColor="0xE8790A"/>
+	<e:Label bold="true" textColor="0xEEF2F6" horizontalCenter="0" textAlign="center" verticalCenter="0" verticalAlign="middle" includeIn="down" x="20" y="20" text="重 试"/>
+	<e:UIAsset source="btn_goon_normal_png" left="0" right="0" top="0" bottom="0" source.down="btn_goon_clicked_png" includeIn="up,disabled"/>
+	<e:Rect right="0" left="0" top="0" bottom="0" fillColor="0xC37221" includeIn="up" x="10" y="10"/>
+	<e:Label verticalCenter="0" textColor="0xEEF2F6" horizontalCenter="0" verticalAlign="middle" textAlign="center" bold="true" includeIn="up" x="10" y="10" text="重 试"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xC37221" includeIn="disabled"/>
+	<e:Label includeIn="disabled" verticalAlign="middle" textAlign="center" verticalCenter="0" horizontalCenter="0" bold="true" textColor="0xEEF2F6" text="重 试"/>
+</e:Skin>

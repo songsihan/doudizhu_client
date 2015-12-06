@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="480" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset left="0" right="0" top="0" bottom="0" source="bg_doudizhu_loading_png"/>
+	<e:UIAsset width="94" height="84" source="icon_logo_png" y="121" horizontalCenter="0"/>
+	<e:UIAsset id="png1" width="89" height="82" source="icon1_png" x="196" y="231" alpha="0.5"/>
+	<e:Label id="name1" text="name1" y="317" size="25" x="205"/>
+	<e:UIAsset id="png2" width="89" height="82" source="icon2_png" y="231" horizontalCenter="0" alpha="0.5"/>
+	<e:Label id="name2" text="name2" y="317" horizontalCenter="0" size="25"/>
+	<e:UIAsset id="png3" width="89" height="82" source="icon3_png" x="516" y="230" alpha="0.5"/>
+	<e:Label id="name3" text="name3" y="317" size="25" x="525"/>
+	<e:Label id="pro1" size="25" x="221" y="261" text="0%"/>
+	<e:Label id="pro2" size="25" y="261" horizontalCenter="-2" text="0%"/>
+	<e:Label id="pro3" text="0%" size="25" y="261" x="542"/>
+	<e:UIAsset source="mask0_png" width="461" height="94" x="175" y="225"/>
+</e:Skin>

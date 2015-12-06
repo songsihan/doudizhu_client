@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="400" height="120" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableContainer"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset source="bg_blue_png" left="0" right="0" top="0" bottom="0" visible="false"/>
+	<e:SkinnableComponent id="result" skinName="skins.components.WinSkin" width="323" height="48" horizontalCenter="0.5" y="42"/>
+</e:Skin>

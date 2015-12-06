@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="480" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset source="bg_blue_png" left="0" right="0" top="0" bottom="0"/>
+	<e:ProgressBar id="pro1" width="254" height="14" skinName="skins.components.ProgressBarSkin" textColor="0x4AB2D7" horizontalCenter="-24" verticalCenter="51"/>
+	<e:UIAsset source="bg_logo_png" horizontalCenter="-24" width="438" height="224" y="10"/>
+	<e:UIAsset id="png1" width="89" height="82" source="icon1_png" x="140" y="211"/>
+	<e:Label id="name1" text="name1" x="249" y="242"/>
+	<e:Label id="state1" textColor="0xDBA549" fontFamily="Arial Narrow" bold="true" text="加载中" size="25" x="556" y="242"/>
+	<e:ProgressBar id="pro2" textColor="0x4AB2D7" skinName="skins.components.ProgressBarSkin" width="254" height="14" y="10" verticalCenter="130" x="249"/>
+	<e:UIAsset id="png2" width="89" height="82" source="icon2_png" x="140" y="300"/>
+	<e:Label id="name2" text="name2" x="249" y="322"/>
+	<e:Label id="state2" textColor="0xDBA549" fontFamily="Arial Narrow" bold="true" text="加载中" size="25" x="556" y="322"/>
+	<e:ProgressBar id="pro3" textColor="0x4AB2D7" skinName="skins.components.ProgressBarSkin" width="254" height="14" y="20" x="249" verticalCenter="212"/>
+	<e:UIAsset id="png3" width="89" height="82" source="icon3_png" x="139" y="388"/>
+	<e:Label id="name3" text="name3" x="248" y="400"/>
+	<e:Label id="state3" textColor="0xDBA549" fontFamily="Arial Narrow" bold="true" text="加载中" size="25" x="556" y="400"/>
+</e:Skin>

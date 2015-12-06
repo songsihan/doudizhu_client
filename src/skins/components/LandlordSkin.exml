@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" width="549">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:BitmapLabel x="-29" y="-10"/>
+	<e:Button id="land1Btn" label="按钮" width="85" height="35" skinName="skins.components.Land1Skin" horizontalCenter="-135" verticalCenter="0.5"/>
+	<e:Button id="land2Btn" label="按钮" width="111" height="55" skinName="skins.components.Land2Skin" x="198" y="23"/>
+	<e:Button id="land3Btn" skinName="skins.components.Land3Skin" width="111" label="按钮" height="55" x="299" y="23"/>
+	<e:UIAsset source="clock_png" width="56" height="60" x="7" y="2"/>
+	<e:Label id="clabel" text="10" x="22" fontFamily="Arial Black" textColor="0x000000" size="15" verticalAlign="middle" textAlign="center" width="26" y="26"/>
+	<e:Button id="unLandBtn" width="111" label="按钮" height="55" x="400" y="23" skinName="skins.components.unLandSkin"/>
+</e:Skin>

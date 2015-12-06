@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.Button"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="up"/>
+		<e:State name="down"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset id="unPlayBtn" left="0" top="0" width="85" height="35" source="btn_dont_out_normal_png" source.down="btn_dont_out_clicked_png" source.disabled="btn_dont_out_disable_png"/>
+</e:Skin>

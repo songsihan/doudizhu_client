@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="480" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableContainer"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset left="0" right="0" top="0" bottom="0" source="bg_blue_big_png"/>
+	<e:UIAsset id="leave1" source="leave_png" width="30" height="25" x="102" y="92"/>
+	<e:UIAsset id="leave2" source="leave_png" x="664" y="91" width="30" height="25"/>
+	<e:UIAsset id="leave3" source="leave_png" width="30" height="25" y="327" x="97"/>
+	<e:Button id="leaveBtn" width="113" skinName="skins.components.ButtonTplSkin" height="35" label="退 出" alpha="0.8" y="437" x="677"/>
+	<e:UIAsset id="robot3" source="robot_png" width="34" height="28" y="324" x="96"/>
+	<e:UIAsset id="robot2" source="robot_png" width="34" height="28" x="661" y="88"/>
+	<e:Label id="bgSize2" textColor="0xF1BF29" height="29" textAlign="center" bold="true" width="39" size="22" verticalAlign="middle" x="721" y="263"/>
+	<e:UIAsset id="bg2" source="bg_black_statistical_1_png" width="82" height="32" x="699" y="167"/>
+	<e:UIAsset id="bg3" source="bg_black_statistical_1_png" width="82" height="32" y="397" x="12"/>
+	<e:Label id="score3" height="17" textAlign="center" width="68" size="10" verticalAlign="middle" text="0" textColor="0xF1B824" y="413" x="17"/>
+	<e:Label id="name3" size="12" verticalAlign="middle" fontFamily="Arial Baltic" textAlign="center" width="80" height="19" text="玩家3" bold="true" y="395" x="11"/>
+	<e:Label id="name2" height="22" verticalAlign="middle" fontFamily="Arial Baltic" textAlign="center" width="80" size="12" x="704" text="玩家2" bold="true" y="166"/>
+	<e:UIAsset id="bg1" source="bg_black_statistical_1_png" width="82" height="32" x="14" y="167"/>
+	<e:Rect height="102" width="271" fillColor="0x012F4E" fillAlpha="0.7" x="263" y="0"/>
+	<e:Group height="63" width="214" y="6" horizontalCenter="-1">
+		<e:UIAsset id="p1" width="45" height="63" y="0" source="cardback_small_png"/>
+		<e:UIAsset id="p2" source="cardback_small_png" width="45" height="63" y="0" horizontalCenter="0"/>
+		<e:UIAsset id="p3" source="cardback_small_png" height="63" width="45" y="0" right="0"/>
+	</e:Group>
+	<e:UIAsset source="word_multiple_png" width="61" height="21" size="30" x="289" y="78"/>
+	<e:Label id="multiple" width="32" text="1" textColor="0xF4BB4A" bold="true" size="22" x="360" y="75"/>
+	<e:Group id="cards" height="88" horizontalCenter="0" y="375">
+	</e:Group>
+	<e:SkinnableComponent id="player1" x="96" width="34" height="28" skinName="skins.components.Bitmap_NongMinSkin" y="131"/>
+	<e:SkinnableComponent id="player3" width="34" height="28" skinName="skins.components.Bitmap_NongMinSkin" y="364" x="94"/>
+	<e:SkinnableComponent id="player2" width="34" height="28" x="657" skinName="skins.components.Bitmap_NongMinSkin" y="131"/>
+	<e:Label id="name1" text="玩家1" x="17" width="80" height="19" size="12" fontFamily="Arial Baltic" verticalAlign="middle" textAlign="center" bold="true" y="166"/>
+	<e:Label id="score1" width="68" height="17" verticalAlign="middle" textAlign="center" size="10" text="0" textColor="0xCDA16E" x="23" y="183"/>
+	<e:Label height="17" textAlign="center" width="68" size="10" verticalAlign="middle" id="score2" x="713" text="0" textColor="0xF2D92E" y="183"/>
+	<e:Label id="bgSize1" width="39" height="29" verticalAlign="middle" textAlign="center" x="34" bold="true" textColor="0xF1BF29" size="22" y="263"/>
+	<e:Group id="group1" width="88" height="76" x="143" y="117"/>
+	<e:Group id="group2" width="88" height="76" x="556" y="117"/>
+	<e:SkinnableContainer id="now_cards" height="76" width="88" skinName="skins.components.ContainerSkin" horizontalCenter="0" y="273"/>
+	<e:SkinnableContainer id="cards1" skinName="skins.components.ContainerSkin" width="85" height="53" x="10" horizontalCenter="-341.5" y="205"/>
+	<e:UIAsset source="g_png" width="9" height="11" y="414" x="15"/>
+	<e:SkinnableContainer id="cards2" skinName="skins.components.ContainerSkin" width="85" height="53" x="20" horizontalCenter="340.5" y="201">
+	</e:SkinnableContainer>
+	<e:Label id="base" text="5" width="32" textColor="0xF1AB20" bold="true" size="22" y="75" x="492"/>
+	<e:Group id="landlord" height="51" width="340" horizontalCenter="-32" y="263"/>
+	<e:UIAsset id="png3" width="75" height="75" source="icon3_png" y="317" x="15"/>
+	<e:UIAsset id="png2" width="75" height="75" x="705" source="icon2_png" y="83"/>
+	<e:UIAsset id="png1" width="75" height="75" x="17" source="icon1_png" y="83"/>
+	<e:UIAsset source="word_end_point_png" x="422" width="61" height="21" y="78"/>
+	<e:UIAsset id="robot1" source="robot_png" x="99" width="34" height="28" y="88"/>
+	<e:Button id="depositBtn" skinName="skins.components.ButtonTplSkin" width="113" height="35" label="取消托管" alpha="0.8" y="388" x="677"/>
+	<e:Group id="end" width="319" height="154" horizontalCenter="0.5" verticalCenter="-56"/>
+	<e:UIAsset source="g_png" width="9" height="11" x="703" y="183"/>
+	<e:UIAsset source="g_png" width="9" height="11" x="17" y="184"/>
+	<e:UIAsset source="mask1_png" x="7" y="80" width="87" height="83"/>
+	<e:UIAsset source="mask2_png" x="701" y="79" width="91" height="84"/>
+	<e:UIAsset source="mask3_png" y="313" width="92" height="80" x="-1"/>
+</e:Skin>

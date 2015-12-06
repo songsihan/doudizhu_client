@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="600" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+<e:State name="normal"/>
+<e:State name="disabled"/>
+</e:states>
+	<e:Rect fillAlpha="0" left="0" right="0" top="0" bottom="0"/>
+	<e:Rect width="384" height="81" horizontalCenter="0" verticalCenter="-0.5" fillAlpha="1" fillColor="0x6BB0E2"/>
+	<e:Label id="label" size="50" verticalCenter.disabled="0.5" x.disabled="110" horizontalCenter.normal="0" verticalCenter.normal="0" textColor.normal="0x2768A4" verticalAlign="middle" textAlign="center" width="455" textColor="0x27A42B" fontFamily="楷体" text="玩 家 匹 配 中" horizontalCenter="0.5" verticalCenter="0"/>
+
+</e:Skin>

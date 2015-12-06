@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #0B4571;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件-->
+    <!--modules_files_start-->
+	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
+	<script egret="lib" src="libs/modules/game/game.web.js" src-release="libs/modules/game/game.web.min.js"></script>
+	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="libs/modules/gui/gui.js" src-release="libs/modules/gui/gui.min.js"></script>
+	<script egret="lib" src="libs/modules/socket/socket.js" src-release="libs/modules/socket/socket.min.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件-->
+    <!--game_files_start-->
+	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
+	<script egret="game" src="bin-debug/com/liubawan/yuezhan/liubawan.js"></script>
+	<script egret="game" src="bin-debug/common/CardSort.js"></script>
+	<script egret="game" src="bin-debug/common/CardUtl.js"></script>
+	<script egret="game" src="bin-debug/common/CommonData.js"></script>
+	<script egret="game" src="bin-debug/common/Constants.js"></script>
+	<script egret="game" src="bin-debug/common/LogUtil.js"></script>
+	<script egret="game" src="bin-debug/common/SoundUtil.js"></script>
+	<script egret="game" src="bin-debug/controller/ModelCache.js"></script>
+	<script egret="game" src="bin-debug/controller/ProxyListener.js"></script>
+	<script egret="game" src="bin-debug/controller/SelfEvent.js"></script>
+	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
+	<script egret="game" src="bin-debug/model/Player.js"></script>
+	<script egret="game" src="bin-debug/model/Table.js"></script>
+	<script egret="game" src="bin-debug/protocol/ChgPlaySt.js"></script>
+	<script egret="game" src="bin-debug/protocol/JoinTable.js"></script>
+	<script egret="game" src="bin-debug/protocol/Landlord.js"></script>
+	<script egret="game" src="bin-debug/protocol/Login.js"></script>
+	<script egret="game" src="bin-debug/protocol/net/NetConf.js"></script>
+	<script egret="game" src="bin-debug/protocol/net/WSocket.js"></script>
+	<script egret="game" src="bin-debug/protocol/Play.js"></script>
+	<script egret="game" src="bin-debug/protocol/Test.js"></script>
+	<script egret="game" src="bin-debug/skins/components/Bitmap_DiZhuSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/Bitmap_NongMinSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/ButtonSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/ButtonTplSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/cardSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/ClockSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/ContainerSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/DepositSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/FailSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/GoOnSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/Land1Skin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/Land2Skin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/Land3Skin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/LandlordSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/LandSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/LeaveSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/playerPlaySkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/playSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/ProgressBarSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/promptSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/readySkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/resetPlaySkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/retrySkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/StartSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/TipSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/UnDepositSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/unLandSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/unPlaySkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/components/WinSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/self/CurrCardSkin.js"></script>
+	<script egret="game" src="bin-debug/skins/self/EndSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/self/LoadingSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/self/LoadingUISkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/self/mainPanelSkin.g.js"></script>
+	<script egret="game" src="bin-debug/skins/self/PopWindow.js"></script>
+	<script egret="game" src="bin-debug/skins/self/_mainPanelSkin.g.js"></script>
+	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
+	<script egret="game" src="bin-debug/utils/Func.js"></script>
+	<script egret="game" src="bin-debug/utils/TimerUtil.js"></script>
+	<script egret="game" src="bin-debug/views/EndLayer.js"></script>
+	<script egret="game" src="bin-debug/views/GameLayer.js"></script>
+	<script egret="game" src="bin-debug/views/LandlordLayer.js"></script>
+	<script egret="game" src="bin-debug/views/MainPanel.js"></script>
+	<script egret="game" src="bin-debug/views/PlayLayer.js"></script>
+	<script egret="game" src="bin-debug/views/StartLayer.js"></script>
+	<script egret="game" src="bin-debug/views/TipLayer.js"></script>
+	<script egret="game" src="bin-debug/views/_MainPanel.js"></script>
+	<!--game_files_end-->
+</head>
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="landscape"
+         data-scale-mode="showAll"
+         data-resolution-mode="retina"
+         data-frame-rate="30"
+         data-content-width="800"
+         data-content-height="480"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-log-filter="" data-show-fps-style="x:0,y:0,size:30",textColor:0x00c200,bgAlpha:0.9">
+    </div>
+    <script>
+        egret.runEgret();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="600" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableContainer"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset source="bg_blue_big_png" left="0" right="0" top="0" bottom="0"/>
+	<e:Button id="bt0" label="按钮" skinName="skins.components.ButtonSkin" x="341" y="172"/>
+	<e:Button id="bt2" label="按钮" skinName="skins.components.ButtonSkin" y="138" x="340"/>
+	<e:Label id="bgSize2" height="22" text="0" textAlign="center" width="21" size="10" verticalAlign="middle" x="700" y="274"/>
+	<e:Label id="score3" height="17" textAlign="center" width="68" size="10" verticalAlign="middle" x="27" y="440" text="0"/>
+	<e:Label id="name3" size="12" verticalAlign="middle" fontFamily="Arial Baltic" textAlign="center" width="80" height="19" x="17" text="玩家3" bold="true" y="457"/>
+	<e:Label id="name2" height="22" verticalAlign="middle" fontFamily="Arial Baltic" textAlign="center" width="80" size="12" x="704" y="237" text="玩家2" bold="true"/>
+	<e:UIAsset source="gold_png" width="17" height="17" x="14" y="440"/>
+	<e:UIAsset source="gold_png" width="17" height="17" x="700" y="221"/>
+	<e:Group height="88" width="196" horizontalCenter="0" y="6">
+		<e:UIAsset id="p1" source="cardback_small_png" top="0" bottom="0" left="0" right="132"/>
+		<e:UIAsset id="p2" source="cardback_small_png" y="10" top="0" bottom="0" left="66" right="66"/>
+		<e:UIAsset id="p3" source="cardback_small_png" y="20" top="0" bottom="0" left="132" right="0"/>
+	</e:Group>
+	<e:Group id="cards" height="88" y="503" horizontalCenter="0">
+	</e:Group>
+	<e:Button id="bt1" label="按钮" x="340" skinName="skins.components.ButtonSkin" y="103"/>
+	<e:SkinnableComponent id="player1" x="14" skinName="skins.components.Bitmap_NongMinSkin" y="138"/>
+	<e:SkinnableComponent id="player3" skinName="skins.components.Bitmap_NongMinSkin" x="14" y="357"/>
+	<e:SkinnableComponent id="player2" skinName="skins.components.Bitmap_NongMinSkin" x="700" y="138"/>
+	<e:UIAsset source="gold_png" width="17" height="17" x="14" y="221"/>
+	<e:Label id="name1" text="玩家1" x="17" y="238" width="80" height="19" size="12" fontFamily="Arial Baltic" verticalAlign="middle" textAlign="center" bold="true"/>
+	<e:Label id="score1" x="27" y="221" width="68" height="17" verticalAlign="middle" textAlign="center" size="10" text="0"/>
+	<e:Label height="17" textAlign="center" width="68" size="10" verticalAlign="middle" id="score2" x="713" y="221" text="0"/>
+	<e:Label id="bgSize1" text="0" x="75" y="274" width="21" height="22" verticalAlign="middle" textAlign="center" size="10"/>
+	<e:SkinnableComponent id="bg1" x="33" y="260" width="41" height="53" skinName="skins.components.cardSkin"/>
+	<e:SkinnableComponent id="bg2" x="724" y="260" width="41" height="53" skinName="skins.components.cardSkin"/>
+	<e:SkinnableComponent y="184" width="88" height="76" skinName="skins.components.readySkin" x="130"/>
+	<e:SkinnableComponent width="88" height="76" skinName="skins.components.readySkin" x="588" y="184"/>
+	<e:SkinnableContainer id="now_cards" height="76" width="88" y="390" horizontalCenter="0" skinName="skins.components.ContainerSkin"/>
+</e:Skin>

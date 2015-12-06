@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" width="180" height="47">
+	<w:HostComponent name="egret.gui.Button"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="up"/>
+		<e:State name="down"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset source="btn_goon_normal_png" left="0" right="0" top="0" bottom="0" source.down="btn_goon_clicked_png"/>
+	<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0xC37221" includeIn="disabled"/>
+	<e:Label text="匹配中" includeIn="disabled" verticalAlign="middle" textAlign="center" verticalCenter="0" horizontalCenter="0" bold="true" textColor="0xEEF2F6"/>
+</e:Skin>
