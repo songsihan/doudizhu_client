@@ -96,7 +96,7 @@ var game;
                 this.onUnPlay(1);
                 return;
             }
-            //            game.LogUtil.log(this.promptArr);
+            game.LogUtil.log(this.promptArr);
             var currPrompt = this.promptArr[this.promptIndex];
             //            game.LogUtil.log("currPrompt:" + currPrompt);
             game.MainPanel.getInstance().selectCards = [];

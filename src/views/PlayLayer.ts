@@ -112,7 +112,7 @@ module game {
                 this.onUnPlay(1);
                 return;
             }
-//            game.LogUtil.log(this.promptArr);
+            game.LogUtil.log(this.promptArr);
             var currPrompt: number[] = this.promptArr[this.promptIndex];
 //            game.LogUtil.log("currPrompt:" + currPrompt);
             MainPanel.getInstance().selectCards = [];

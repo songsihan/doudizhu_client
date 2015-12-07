@@ -50,8 +50,9 @@ module skin {
                     var singleWith = CardUtil.getPromptBaseCards(singleWithData,cardNos);
                     if(singleWith.length >= 2)
                     {
-                        for(var _single in singleWith)
+                        for(var key in singleWith)
                         {
+                            var _single = singleWith[key];
                             cardWith.push(_single[0]);
                             if(cardWith.length == 2)
                             {
@@ -71,11 +72,12 @@ module skin {
                 else if(_lastCard.with == 2)
                 {
                     var doubleWithData = { type: game.Constants.CARD_TYPE_DOUBLE,num: 1,minValue: 2};
-                    var doubleWith = CardUtil.getPromptBaseCards(_lastCard,cardNos); 
+                    var doubleWith = CardUtil.getPromptBaseCards(doubleWithData,cardNos); 
                     if(doubleWith.length >= 2)
                     {
-                        for(var _double in doubleWith)
+                        for(var key in doubleWith)
                         {
+                            var _double = doubleWith[key];
                             cardWith.push(_double[0],_double[1]);
                             if(cardWith.length == 4)
                             {
@@ -280,7 +282,7 @@ module skin {
             var promptNos = [];
             for(var _val in cardNums)
             {
-                if(_val > minVal && cardNums[_val] > (size-1))
+                if(_val > minVal && cardNums[_val] >= size)
                 {
                     var nos:number[] = valNos[_val];
                     promptNos.push(nos);
