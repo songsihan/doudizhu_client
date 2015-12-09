@@ -31,22 +31,8 @@ var protocol;
                     game.LogUtil.log('请求异常，重试');
                 }
             }
-            else if (s == game.Constants.RESPONSE_RECONN_FAIL) {
-                //重连失败，是否重试
-                var btn = new egret.gui.Button();
-                btn.skinName = skins.components.ButtonTplSkin;
-                btn.label = '重连失败';
-                game.MainPanel.getInstance().end.addElement(btn);
-                btn.horizontalCenter = 0;
-                btn.enabled = false;
-                game.LogUtil.log('重连失败');
-            }
             else if (s == game.Constants.RESPONSE_RECONN_SUCCESS) {
-                game.MainPanel.getInstance().panelStatus = 'reConn';
-                game.TimerUtil.getInstance().clear();
                 game.ModelCache.getInstance().initTable(data.tableInfo);
-                var selfevent = new game.SelfEvent(game.SelfEvent.UPDATE_TABLE);
-                game.ProxyListener.getInstance().dispatchEvent(selfevent);
             }
             else {
                 game.ModelCache.getInstance().flag = 'login';

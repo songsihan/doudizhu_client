@@ -6,6 +6,7 @@ module game {
 	 */
 	export class MainPanel extends egret.gui.SkinnableContainer{
         
+    	
     	//牌局底分、倍数
         public base: egret.gui.Label;
         public multiple: egret.gui.Label;
@@ -99,7 +100,6 @@ module game {
             super.partAdded(partName, instance);
             this.depositBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.deposit,this);
             this.leaveBtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.leave,this);
-                                  
         }
         
         public leave():void
@@ -110,18 +110,19 @@ module game {
             liubawan.LiubawanEgretInterface.getInstance().quitGameComplete();
         }
         
-        public deposit():void
+        public deposit(chg:number = 0):void
         {
             var table = ModelCache.getInstance().getTable();
             var player = ModelCache.getInstance().getPlayer();
             var st = 1;
-                            
-            if(table.playerSt[player.uid] == game.Constants.PLAYER_DEPOSIT)
+            if(chg > 0 && table.playerSt[player.uid] != game.Constants.PLAYER_DEPOSIT)
             {
-                                
+                return;
+            }
+            if(table.playerSt[player.uid] == game.Constants.PLAYER_DEPOSIT)
+            {                
                 table.playerSt[player.uid] = game.Constants.PLAYER_UN_DEPOSIT;
                 MainPanel.getInstance().depositBtn.label = '托 管';
-//                MainPanel.getInstance().depositBtn.skinName = skins.components.DepositSkin;
                 MainPanel.getInstance().robot3.visible = false;
                 st = 0;//未托管
             }
@@ -129,10 +130,8 @@ module game {
             {
                 table.playerSt[player.uid] = game.Constants.PLAYER_DEPOSIT;
                 MainPanel.getInstance().depositBtn.label = '取消托管';
-//                MainPanel.getInstance().depositBtn.skinName = skins.components.UnDepositSkin;
                 MainPanel.getInstance().robot3.visible = true;
             }
-//            game.LogUtil.log("st2:"+ModelCache.getInstance().getTable().playerSt[player.uid]);
                             
             var selfevent: game.SelfEvent = new game.SelfEvent(SelfEvent.DEPOSIT);
             selfevent.test = st;
@@ -185,7 +184,6 @@ module game {
             MainPanel.getInstance().name3.text = player.name;
             MainPanel.getInstance().score3.text = player.score;
             
-            MainPanel.getInstance().panelStatus = 'initTable';
 //            GameLayer.getInstance().rmLayer(GameLayer.START_LAYER);
             MainPanel.getInstance().robot1.visible = false;
             MainPanel.getInstance().robot2.visible = false;
@@ -197,7 +195,9 @@ module game {
             MainPanel.getInstance().leave2.visible = false;
             MainPanel.getInstance().leave3.visible = false;
             
-            if(table.tableSt == Constants.TABLE_LANDLORD) {
+            if(game.MainPanel.getInstance().panelStatus == 'reConn' 
+                || table.tableSt == Constants.TABLE_LANDLORD) 
+            {
                 MainPanel.getInstance().end.removeAllElements();
                 MainPanel.getInstance().group1.removeAllElements();                
                 MainPanel.getInstance().group2.removeAllElements();
@@ -216,7 +216,7 @@ module game {
                 
                 var selfUid = ModelCache.getInstance().getUid();
                 MainPanel.getInstance().base.text = table.baseSc;
-                MainPanel.getInstance().multiple.text = table.multiple;
+                game.MainPanel.getInstance().multiple.text = table.multiple;
 //                var index = table.uids.indexOf(selfUid);
                 var index = Func.getArrIndex(table.uids,selfUid);
                 var uidToPos: number[] = [];
@@ -242,14 +242,14 @@ module game {
                 MainPanel.getInstance().score1.text = player1.score;
                 var size1 = table.cardNums[uid1];
                 MainPanel.getInstance().bgSize1.text = size1;
-                MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],size1);
+//                MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],size1);
                 
                 var player2 = table.playerInfos[uid2];
                 MainPanel.getInstance().name2.text = player2.name;
                 MainPanel.getInstance().score2.text = player2.score;
                 var size2 = table.cardNums[uid2];
                 MainPanel.getInstance().bgSize2.text = size2;
-                MainPanel.getInstance().cards2.skinName = new skin.CurrCardSkin([],size2);
+//                MainPanel.getInstance().cards2.skinName = new skin.CurrCardSkin([],size2);
                 
                 TimerUtil.getInstance().addObj('me',MainPanel.getInstance(),100);
                 
@@ -262,11 +262,11 @@ module game {
             var cnt = this.cardNos.length;
             if(this.cardCnt < cnt)
             {
-                this.value_x += this.value_x == -1?1:24;
+                this.value_x += this.value_x == -1?1:36;
                 var cardNo = this.cardNos[this.cardCnt];
                 var card: egret.gui.UIAsset = new egret.gui.UIAsset();
                 card.id = String(cardNo);
-                card.height = 96;
+                card.height = 106;
                 card.width = 68;
                 card.verticalCenter = 0;
                 card.source = CommonData.getCardPng(cardNo);
@@ -488,7 +488,7 @@ module game {
             
             game.LogUtil.log('updateTablePlay_'+table.tableSt);
             var lUid = table.lUid;
-            MainPanel.getInstance().multiple.text = table.multiple;
+            game.MainPanel.getInstance().multiple.text = table.multiple;
             //倍数翻倍 效果
             MainPanel.getInstance().end.removeAllElements();
             if(table.tableSt != game.Constants.TABLE_LANDLORD)
@@ -545,7 +545,6 @@ module game {
                     {
                         MainPanel.getInstance().cardNos = skin.CardSort.sort(selfCards);
                     }
-                    
 //                    SoundUtil.playCardSound(table.playCardType);
                     MainPanel.getInstance().landlord.removeAllElements();
                     MainPanel.getInstance().now_cards.removeAllElements();
@@ -560,11 +559,10 @@ module game {
                     }
                     else 
                     {
-                        var tip = new egret.gui.UIAsset();
+                        var tip = new egret.gui.SkinnableComponent();
                         MainPanel.getInstance().landlord.addElement(tip);
-                        tip.source = game.MainPanel.getInstance().playTipFlag?'word_nocardbig_png' : 'word_dontout_png';
+                        tip.skinName = game.MainPanel.getInstance().playTipFlag ? skins.components.CardTip1Skin : skins.components.CardTip2Skin;
                         tip.horizontalCenter = 0;
-                        tip.height = 35;
                         tip.verticalCenter = 0;
                     }
                 }
@@ -584,16 +582,15 @@ module game {
                             MainPanel.getInstance().group1.addElement(play_cards);
                             play_cards.x = 0;                            
                             MainPanel.getInstance().bgSize1.text = table.cardNums[table.lastOpUid];
-                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
+//                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }
                         else
                         {                              
                             SoundUtil.playSound(1);       
-                            var tip = new egret.gui.UIAsset();
+                            var tip = new egret.gui.SkinnableComponent();
                             MainPanel.getInstance().group1.addElement(tip);
-                            tip.source = 'word_dontout_png'
+                            tip.skinName = skins.components.CardTip2Skin;
                             tip.horizontalCenter = 0;
-                            tip.height = 35;
                         }
                     }
                     else
@@ -607,24 +604,27 @@ module game {
                             MainPanel.getInstance().group2.addElement(play_cards);
                             play_cards.right = 0;
                             MainPanel.getInstance().bgSize2.text = table.cardNums[table.lastOpUid];
-                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
+//                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }
                         else
                         {                       
                             SoundUtil.playSound(1);       
 //                            var tipLayer = new TipLayer();
-                            var tip = new egret.gui.UIAsset();
+                            var tip = new egret.gui.SkinnableComponent();
                             MainPanel.getInstance().group2.addElement(tip);
 //                            tipLayer.label.text = "不出";
-                            tip.source = 'word_dontout_png'
+                            tip.skinName = skins.components.CardTip2Skin;
                             tip.horizontalCenter = 0;
-                            tip.height = 35;
                         }
                     }
                 }
                 
                 if(table.tableSt == game.Constants.TABLE_END)
                 {
+                    if(table.winUid == player.uid)
+                    {
+                        MainPanel.getInstance().cards.removeAllElements();
+                    }
                     //打开结算界面-继续游戏jt请求
                     game.LogUtil.log('table is end!!!');
                     var isWin = false;
@@ -675,11 +675,11 @@ module game {
             this.value_x = -1;
             for(var key in this.cardNos)
             {
-                this.value_x += this.value_x == -1?1:24;
+                this.value_x += this.value_x == -1?1:36;
                 
                 var cardNo = this.cardNos[key];
                 var card: egret.gui.UIAsset = new egret.gui.UIAsset();
-                card.height = 96;
+                card.height = 106;
                 card.width = 68;
                 card.verticalCenter = 0;
                 card.id = String(cardNo);

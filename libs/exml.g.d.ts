@@ -19,6 +19,18 @@ declare module skins.components{
 	}
 }
 declare module skins.components{
+	class CardTip1Skin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class CardTip2Skin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class CardTip3Skin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
 	class ClockSkin extends egret.gui.Skin{
 	}
 }
@@ -88,6 +100,10 @@ declare module skins.components{
 }
 declare module skins.components{
 	class retrySkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class SocketTipSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{

@@ -11,6 +11,7 @@ module game {
         private static lastSendMsg;
         public static reSendCnt: number = 0;
         public static reConn: number = 0;
+        public static heartTime: number = 0;
         public static getInstance():any {
             if (WSocket._instance == null) {
                 WSocket._instance = new WSocket();
@@ -26,9 +27,11 @@ module game {
             this.ws.addEventListener(egret.Event.CONNECT,this.onSocketOpen,this);
             this.ws.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
             this.ws.connect(NetConf.SERVER_IP,NetConf.PORT);
+            game.TimerUtil.getInstance().addObj('ws',this);
         }
         
         private onReceiveMsg(event:egret.ProgressEvent):void{
+            MainPanel.getInstance().end && MainPanel.getInstance().end.removeAllElements();
             var data = this.ws.readUTF();
             var msg = JSON.parse(data);
             game.LogUtil.log("读取数据：" + data);
@@ -57,7 +60,7 @@ module game {
         }
         
         private onSocketError(event:egret.Event):void{
-            if(WSocket.reSendCnt > 5)
+            if(WSocket.reSendCnt > 10)
             {
                 return;
             }
@@ -85,24 +88,20 @@ module game {
             if(!this.ws.connected 
                 && ModelCache.getInstance().getTable().tableSt == game.Constants.TABLE_IN_GAME)
             {
-                var btn = new egret.gui.Button();
-                btn.skinName = skins.components.ButtonTplSkin;
-                btn.label = '掉线重连';
-                MainPanel.getInstance().end.addElement(btn);
-                btn.horizontalCenter = 0;
-                btn.alpha = 0.8;
-                btn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.reConn,this);
+                this.socketTip(-1);
+                this.ws.connect(NetConf.SERVER_IP,NetConf.PORT);
                 game.LogUtil.log('掉线重连');
-            }
-            if(JSON.stringify(WSocket.lastSendMsg) == JSON.stringify(msg))
-            {
-                if(WSocket.reSendCnt >= 10)
+                if(WSocket.reSendCnt >= 10) 
                 {
+                    this.socketTip(1);
                     //请求异常，不再重连============
                     game.LogUtil.log('请求异常，不再重连');
                     this.ws.close();
                     return false;
                 }
+            }
+            if(JSON.stringify(WSocket.lastSendMsg) == JSON.stringify(msg))
+            {
                 WSocket.reSendCnt++;
                 this.ws.writeUTF(JSON.stringify(msg));
                 game.LogUtil.log("发送数据：" + JSON.stringify(msg));
@@ -115,29 +114,32 @@ module game {
             }
         }
         
-        public reConn():void
-        {       
-            game.LogUtil.log('reConn');
-            MainPanel.getInstance().end.removeAllElements();
-            WSocket.reConn = 1;
-            WSocket.reSendCnt = 0;
-            this.ws.connect(NetConf.SERVER_IP,NetConf.PORT);
-            game.TimerUtil.getInstance().addObj('ws',this,200);
-        }
-        public exeTimer() {
-            game.LogUtil.log('WSocket_exeTimer');
-            if(!this.ws.connected && WSocket.reSendCnt >= 2)
+        public socketTip(isFail=-1)
+        {
+            MainPanel.getInstance().end && MainPanel.getInstance().end.removeAllElements();
+            var tip = new egret.gui.Button();
+            tip.skinName = skins.components.SocketTipSkin;
+            tip.label = (isFail == -1) ? "您已掉线，正在重新连接" : "您已掉线，尝试连接失败";
+            tip.horizontalCenter = 0;
+            game.MainPanel.getInstance().end.addElement(tip);
+            
+            if(isFail == 1)
             {
-                //重连失败，是否重试
-                var btn = new egret.gui.Button();
-                btn.skinName = skins.components.ButtonTplSkin;
-                btn.label = '重连失败';
-                game.MainPanel.getInstance().end.addElement(btn);
-                btn.horizontalCenter = 0;
-                btn.enabled = false;
                 game.LogUtil.log('重连失败');
                 game.TimerUtil.getInstance().timer.stop();
-                game.WSocket.getInstance().clear();
+                game.WSocket.getInstance().ws.close();
+            }
+        }
+        
+        public exeTimer() {
+            game.LogUtil.log('WSocket_exeTimer');
+            if((new Date().getTime() - WSocket.heartTime) > 1000
+                && ModelCache.getInstance().getTable().tableSt == game.Constants.TABLE_IN_GAME)
+            {
+                WSocket.heartTime = new Date().getTime();
+                //心跳请求 请求间隔1秒
+                var data = protocol.Test.tReq(-1,-1);
+                game.WSocket.getInstance().sendJsonMsg(data);
             }
         }
 	}

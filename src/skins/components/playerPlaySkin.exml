@@ -7,9 +7,9 @@
 		<e:State name="disabled"/>
 	</e:states>
 	<e:BitmapLabel x="-29" y="-10"/>
-	<e:Button id="unPlayBtn" label="按钮" width="85" height="35" skinName="skins.components.unPlaySkin" horizontalCenter="-80" verticalCenter="0.5"/>
-	<e:Button id="promptBtn" label="按钮" width="85" height="35" skinName="skins.components.promptSkin" verticalCenter="0.5" x="217"/>
-	<e:Button id="playBtn" width="85" label="按钮" height="35" y="10" skinName="skins.components.playSkin" verticalCenter="0.5" x="323"/>
+	<e:Button id="unPlayBtn" label="按钮" width="85" height="35" skinName="skins.components.unPlaySkin" horizontalCenter="-99" verticalCenter="0.5"/>
+	<e:Button id="promptBtn" label="按钮" width="85" height="35" skinName="skins.components.promptSkin" verticalCenter="0.5" x="198"/>
+	<e:Button id="playBtn" width="85" label="按钮" height="35" y="10" skinName="skins.components.playSkin" verticalCenter="0.5" x="304"/>
 	<e:UIAsset source="clock_png" width="56" height="60" x="7" verticalCenter="0"/>
 	<e:Label id="clabel" text="10" x="22" fontFamily="Arial Black" textColor="0x000000" size="15" verticalAlign="middle" textAlign="center" width="26" verticalCenter="4"/>
 	<e:Label id="label" y="5" width="279" height="33" horizontalCenter="0" fontFamily="楷体" size="30" textColor="0xC3760D" bold="true"/>

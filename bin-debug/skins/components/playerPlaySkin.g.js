@@ -40,13 +40,13 @@ var skins;
             p.playBtn_i = function () {
                 var t = new egret.gui.Button();
                 this.playBtn = t;
-                this.__s(t, ["height", "label", "skinName", "verticalCenter", "width", "x", "y"], [35, "按钮", skins.components.playSkin, 0.5, 85, 323, 10]);
+                this.__s(t, ["height", "label", "skinName", "verticalCenter", "width", "x", "y"], [35, "按钮", skins.components.playSkin, 0.5, 85, 304, 10]);
                 return t;
             };
             p.promptBtn_i = function () {
                 var t = new egret.gui.Button();
                 this.promptBtn = t;
-                this.__s(t, ["height", "label", "skinName", "verticalCenter", "width", "x"], [35, "按钮", skins.components.promptSkin, 0.5, 85, 217]);
+                this.__s(t, ["height", "label", "skinName", "verticalCenter", "width", "x"], [35, "按钮", skins.components.promptSkin, 0.5, 85, 198]);
                 return t;
             };
             p.__3_i = function () {
@@ -57,7 +57,7 @@ var skins;
             p.unPlayBtn_i = function () {
                 var t = new egret.gui.Button();
                 this.unPlayBtn = t;
-                this.__s(t, ["height", "horizontalCenter", "label", "skinName", "verticalCenter", "width"], [35, -80, "按钮", skins.components.unPlaySkin, 0.5, 85]);
+                this.__s(t, ["height", "horizontalCenter", "label", "skinName", "verticalCenter", "width"], [35, -99, "按钮", skins.components.unPlaySkin, 0.5, 85]);
                 return t;
             };
             playerPlaySkin._skinParts = ["unPlayBtn", "promptBtn", "playBtn", "clabel", "label"];

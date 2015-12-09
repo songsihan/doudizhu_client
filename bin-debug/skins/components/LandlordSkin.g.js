@@ -34,19 +34,19 @@ var skins;
             p.land1Btn_i = function () {
                 var t = new egret.gui.Button();
                 this.land1Btn = t;
-                this.__s(t, ["height", "horizontalCenter", "label", "skinName", "verticalCenter", "width"], [35, -135, "按钮", skins.components.Land1Skin, 0.5, 85]);
+                this.__s(t, ["height", "horizontalCenter", "label", "skinName", "verticalCenter", "width"], [35, -151, "按钮", skins.components.Land1Skin, 0.5, 85]);
                 return t;
             };
             p.land2Btn_i = function () {
                 var t = new egret.gui.Button();
                 this.land2Btn = t;
-                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.Land2Skin, 111, 198, 23]);
+                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.Land2Skin, 111, 182, 23]);
                 return t;
             };
             p.land3Btn_i = function () {
                 var t = new egret.gui.Button();
                 this.land3Btn = t;
-                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.Land3Skin, 111, 299, 23]);
+                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.Land3Skin, 111, 283, 23]);
                 return t;
             };
             p.__3_i = function () {
@@ -57,7 +57,7 @@ var skins;
             p.unLandBtn_i = function () {
                 var t = new egret.gui.Button();
                 this.unLandBtn = t;
-                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.unLandSkin, 111, 400, 23]);
+                this.__s(t, ["height", "label", "skinName", "width", "x", "y"], [55, "按钮", skins.components.unLandSkin, 111, 384, 23]);
                 return t;
             };
             LandlordSkin._skinParts = ["land1Btn", "land2Btn", "land3Btn", "clabel", "unLandBtn"];

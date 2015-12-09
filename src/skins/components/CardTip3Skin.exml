@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing" width="243" height="36">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+<e:State name="normal"/>
+<e:State name="disabled"/>
+</e:states>
+	<e:UIAsset id="tip" height="30" width="50" verticalAlign="middle" textAlign="left" horizontalCenter="-3.5" verticalCenter="0"/>
+	<e:UIAsset verticalCenter="0" verticalAlign="middle" textAlign="left" width="50" height="30" horizontalCenter="-3.5" id="tip0" x="10" y="10"/>
+	<e:UIAsset verticalCenter="0" verticalAlign="middle" textAlign="left" width="50" id="tip1" height="30" horizontalCenter="-3.5" x="20" y="20"/>
+	<e:UIAsset verticalCenter="0" width="200" height="30" horizontalCenter="0" x="20" y="20" source="word_no_rule_png"/>
+</e:Skin>

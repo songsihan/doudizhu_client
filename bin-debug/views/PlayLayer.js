@@ -38,6 +38,7 @@ var game;
         p.onPlay = function () {
             this.label.text = '';
             game.LogUtil.log('onPlay');
+            game.MainPanel.getInstance().deposit(1);
             var selectCardNos = game.MainPanel.getInstance().selectCards;
             if (selectCardNos.length > 0) {
                 selectCardNos = skin.CardSort.sortById(selectCardNos);
@@ -58,10 +59,10 @@ var game;
                 //                game.LogUtil.log("_cardNos");
                 //                game.LogUtil.log(v==false?false:v);
                 if (cardsData == false) {
-                    var tip = new egret.gui.UIAsset();
+                    var tip = new egret.gui.SkinnableComponent();
                     tip.height = 35;
                     game.MainPanel.getInstance().landlord.addElement(tip);
-                    tip.source = 'word_no_rule_png';
+                    tip.skinName = skins.components.CardTip3Skin;
                     tip.horizontalCenter = 0;
                     return;
                 }
@@ -119,7 +120,6 @@ var game;
         };
         p.onUnPlay = function (isTip) {
             if (isTip === void 0) { isTip = 0; }
-            console.log(isTip);
             game.LogUtil.log('unPlay');
             game.TimerUtil.getInstance().rmObj('play');
             game.MainPanel.getInstance().landlord.removeAllElements();
@@ -130,12 +130,11 @@ var game;
             };
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
             game.MainPanel.getInstance().playTipFlag = (isTip > 0);
-            var tip = new egret.gui.UIAsset();
+            var tip = new egret.gui.SkinnableComponent();
             game.MainPanel.getInstance().landlord.addElement(tip);
-            tip.source = (isTip > 0) ? 'word_nocardbig_png' : 'word_dontout_png';
+            tip.skinName = (isTip > 0) ? skins.components.CardTip1Skin : skins.components.CardTip2Skin;
             tip.horizontalCenter = 0;
             tip.verticalCenter = 0;
-            tip.height = 35;
             for (var key in game.MainPanel.getInstance().cards.$children) {
                 if (game.MainPanel.getInstance().cards.$children[key].verticalCenter < 0) {
                     game.MainPanel.getInstance().cards.$children[key].verticalCenter = 0;

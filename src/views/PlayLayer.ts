@@ -45,7 +45,9 @@ module game {
         public onPlay(){
             this.label.text = '';
             game.LogUtil.log('onPlay');
-            var selectCardNos:any[] = MainPanel.getInstance().selectCards;
+
+            MainPanel.getInstance().deposit(1);
+            var selectCardNos = game.MainPanel.getInstance().selectCards;
             if(selectCardNos.length > 0)
             {
                 selectCardNos = skin.CardSort.sortById(selectCardNos);
@@ -71,10 +73,10 @@ module game {
                 //                game.LogUtil.log(v==false?false:v);
                 if(cardsData == false)
                 {
-                    var tip = new egret.gui.UIAsset();
+                    var tip = new egret.gui.SkinnableComponent();
                     tip.height = 35;
                     game.MainPanel.getInstance().landlord.addElement(tip);
-                    tip.source = 'word_no_rule_png';
+                    tip.skinName = skins.components.CardTip3Skin;
                     tip.horizontalCenter = 0;
                     return;
                 }
@@ -138,7 +140,6 @@ module game {
             
         }
         public onUnPlay(isTip:number = 0){
-            console.log(isTip)
             game.LogUtil.log('unPlay');
             TimerUtil.getInstance().rmObj('play');
             MainPanel.getInstance().landlord.removeAllElements();
@@ -149,14 +150,12 @@ module game {
             };
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
             
-            game.MainPanel.getInstance().playTipFlag = (isTip > 0 );
-            var tip = new egret.gui.UIAsset();
+            game.MainPanel.getInstance().playTipFlag = (isTip > 0);
+            var tip = new egret.gui.SkinnableComponent();
             game.MainPanel.getInstance().landlord.addElement(tip);
-            tip.source = (isTip > 0 )?'word_nocardbig_png' : 'word_dontout_png';
+            tip.skinName = (isTip > 0) ? skins.components.CardTip1Skin : skins.components.CardTip2Skin;
             tip.horizontalCenter = 0;
             tip.verticalCenter = 0;
-            tip.height = 35;
-               
             for(var key in MainPanel.getInstance().cards.$children) 
             {
                 if(MainPanel.getInstance().cards.$children[key].verticalCenter < 0) 

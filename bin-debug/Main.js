@@ -87,6 +87,17 @@ var Main = (function (_super) {
         game.LogUtil.log('Main_exeTimer');
         this.sockeOverTime();
         var table = game.ModelCache.getInstance().getTable();
+        if (table.tableSt == game.Constants.TABLE_IN_GAME) {
+            game.TimerUtil.getInstance().rmObj('main');
+            this.stage.removeChild(this.loadingView);
+            game.MainPanel.getInstance().panelStatus = 'reConn';
+            var selfevent = new game.SelfEvent(game.SelfEvent.INIT_TABLE);
+            game.ProxyListener.getInstance().dispatchEvent(selfevent);
+            var selfevent = new game.SelfEvent(game.SelfEvent.UPDATE_TABLE);
+            game.ProxyListener.getInstance().dispatchEvent(selfevent);
+            game.TimerUtil.getInstance().clear();
+            game.TimerUtil.getInstance().addObj('ws', game.WSocket.getInstance());
+        }
         if (table.tableSt == game.Constants.TABLE_LANDLORD) {
             game.TimerUtil.getInstance().rmObj('main');
             this.stage.removeChild(this.loadingView);
@@ -94,7 +105,6 @@ var Main = (function (_super) {
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
             return;
         }
-        //        game.LogUtil.log("time:" + game.ModelCache.getInstance().timerTime);
         var nowTime = new Date().getTime();
         if (game.ModelCache.getInstance().flag == 'login') {
             var selfUid = game.ModelCache.getInstance().getUid();
@@ -103,7 +113,6 @@ var Main = (function (_super) {
             var selfevent = new game.SelfEvent(game.SelfEvent.JT);
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
             game.ModelCache.getInstance().timerTime = nowTime;
-            //            game.ModelCache.getInstance().reqCnt++;
             this.sendProgress();
         }
         else if ((nowTime - game.ModelCache.getInstance().timerTime) > 90000
@@ -119,11 +128,11 @@ var Main = (function (_super) {
             tipLayer.x = 400;
             tipLayer.y = 30;
         }
-        else if (Main.hitNum >= 3) {
+        else if (Main.hitNum >= 5) {
             Main.hitNum = 0;
+            this.sendProgress();
         }
         this.loadingView.setImg();
-        this.sendProgress();
         Main.hitNum++;
     };
     p.sendProgress = function () {
@@ -171,6 +180,7 @@ var Main = (function (_super) {
             var addValue = newAddValue - oldAddValue;
             this.loadingView.setProgress(selfUid, addValue, 0);
             Main.oldItemLoadNum = newAddValue;
+            this.sendProgress();
         }
     };
     /**
@@ -185,23 +195,6 @@ var Main = (function (_super) {
         this.guiGameLayer = game.GameLayer.getInstance();
         this.addChild(this.guiGameLayer);
         this.guiGameLayer.showLayer(game.GameLayer.MAIN_LAYER);
-        //        this.guiGameLayer.showLayer(game.GameLayer.START_LAYER);
-        //        game.MainPanel.getInstance().cardNos = skin.CardSort.sort(game.Constants.cardNos);
-        //        game.MainPanel.getInstance().resetCards();
-        //                            
-        //        var playLayer = new game.PlayLayer(true);
-        //        game.MainPanel.getInstance().landlord.addElement(playLayer);
-        //        var bitmap:egret.Bitmap = new egret.Bitmap();
-        //        bitmap.texture = RES.getRes("bgImage");
-        //        this.gameLayer.addChild(bitmap);
-        //GUI的组件必须都在这个容器内部,UIStage会始终自动保持跟舞台一样大小。
-        //GUI components must be within the container, UIStage will always remain the same as stage size automatically.
-        //        this.guiLayer = new egret.gui.UIStage();
-        //        this.addChild(this.guiLayer);
-        //        var main: game.MainPanel = new game.MainPanel();
-        //        //在GUI范围内一律使用addElement等方法替代addChild等方法。
-        //        //Within GUI scope, addChild methods should be replaced by addElement methods.
-        //        this.guiLayer.addElement(main);
     };
     Main.reqCnt = 0;
     Main.reLoadResCnt = 0;

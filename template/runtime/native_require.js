@@ -37,6 +37,8 @@ var game_file_list = [
 	"bin-debug/skins/components/ButtonSkin.g.js",
 	"bin-debug/skins/components/ButtonTplSkin.g.js",
 	"bin-debug/skins/components/cardSkin.g.js",
+	"bin-debug/skins/components/CardTip1Skin.g.js",
+	"bin-debug/skins/components/CardTip2Skin.g.js",
 	"bin-debug/skins/components/ClockSkin.g.js",
 	"bin-debug/skins/components/ContainerSkin.g.js",
 	"bin-debug/skins/components/DepositSkin.g.js",
@@ -55,6 +57,7 @@ var game_file_list = [
 	"bin-debug/skins/components/readySkin.g.js",
 	"bin-debug/skins/components/resetPlaySkin.g.js",
 	"bin-debug/skins/components/retrySkin.g.js",
+	"bin-debug/skins/components/SocketTipSkin.g.js",
 	"bin-debug/skins/components/StartSkin.g.js",
 	"bin-debug/skins/components/TipSkin.g.js",
 	"bin-debug/skins/components/UnDepositSkin.g.js",
@@ -79,6 +82,7 @@ var game_file_list = [
 	"bin-debug/views/StartLayer.js",
 	"bin-debug/views/TipLayer.js",
 	"bin-debug/views/_MainPanel.js",
+	"bin-debug/skins/components/CardTip3Skin.g.js",
 	//----auto game_file_list end----
 ];
 
