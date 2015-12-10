@@ -15,10 +15,6 @@ declare module skins.components{
 	}
 }
 declare module skins.components{
-	class cardSkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
 	class CardTip1Skin extends egret.gui.Skin{
 	}
 }
@@ -63,11 +59,11 @@ declare module skins.components{
 	}
 }
 declare module skins.components{
-	class LandlordSkin extends egret.gui.Skin{
+	class LandSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{
-	class LandSkin extends egret.gui.Skin{
+	class LandlordSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{
@@ -75,31 +71,11 @@ declare module skins.components{
 	}
 }
 declare module skins.components{
-	class playerPlaySkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
-	class playSkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
 	class ProgressBarSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{
-	class promptSkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
-	class readySkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
-	class resetPlaySkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
-	class retrySkin extends egret.gui.Skin{
+	class ProgressSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{
@@ -119,15 +95,43 @@ declare module skins.components{
 	}
 }
 declare module skins.components{
+	class WinSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class cardSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class playSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class playerPlaySkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class promptSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class readySkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class resetPlaySkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
+	class retrySkin extends egret.gui.Skin{
+	}
+}
+declare module skins.components{
 	class unLandSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.components{
 	class unPlaySkin extends egret.gui.Skin{
-	}
-}
-declare module skins.components{
-	class WinSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.self{
@@ -143,10 +147,14 @@ declare module skins.self{
 	}
 }
 declare module skins.self{
-	class mainPanelSkin extends egret.gui.Skin{
+	class NewLoadingSkin extends egret.gui.Skin{
 	}
 }
 declare module skins.self{
 	class _mainPanelSkin extends egret.gui.Skin{
+	}
+}
+declare module skins.self{
+	class mainPanelSkin extends egret.gui.Skin{
 	}
 }

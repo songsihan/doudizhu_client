@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="800" height="480" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:UIAsset left="0" right="0" top="0" bottom="0" source="bg_doudizhu_loading_png"/>
+	<e:ProgressBar id="line1" skinName="skins.components.ProgressSkin" width="194" height="31" y="242" horizontalCenter="35"/>
+	<e:ProgressBar id="line2" height="31" skinName="skins.components.ProgressSkin" width="194" y="312" horizontalCenter="35"/>
+	<e:ProgressBar id="line3" width="194" height="31" skinName="skins.components.ProgressSkin" y="382" horizontalCenter="35"/>
+	<e:UIAsset width="94" height="84" source="icon_logo_png" y="105" horizontalCenter="0"/>
+	<e:Label id="name1" size="24" fontFamily="楷体" y="237" x="245" text="name1"/>
+	<e:Label id="name2" size="24" fontFamily="楷体" y="307" x="245" text="name2"/>
+	<e:Label id="pro1" text="0%" size="24" fontFamily="楷体" x="545" y="237"/>
+	<e:Label id="pro2" text="0%" size="24" fontFamily="楷体" y="307" x="545"/>
+	<e:Label id="pro3" text="0%" size="24" fontFamily="楷体" y="377" x="545"/>
+	<e:Label id="name3" size="24" fontFamily="楷体" y="377" x="245" text="name3"/>
+</e:Skin>

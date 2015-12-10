@@ -112,15 +112,15 @@ var game;
             this.tableCache.tid = tid;
         };
         ModelCache.testUserData = {
-            "101": { "id": 101, "nickName": "艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
+            "101": { "id": 101, "nickName": "艾尔艾尔艾尔艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
             "202": { "id": 202, "nickName": "阿布", "headImg": "http://oss.68wan.com/wannimei/audio/test/p2.jpg", "gold": 3000 },
             "303": { "id": 303, "nickName": "婕拉", "headImg": "http://oss.68wan.com/wannimei/audio/test/p2.jpg", "gold": 5000 }
         };
         ModelCache.testRoomData = {
-            "user": { "id": 101, "nickName": "艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
+            "user": { "id": 101, "nickName": "艾尔艾尔艾尔艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
             "room": { "roomId": 1,
                 "users": [
-                    { "id": 101, "nickName": "艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
+                    { "id": 101, "nickName": "艾尔艾尔艾尔艾尔", "headImg": "http://oss.68wan.com/wannimei/audio/test/p1.jpg", "gold": 1000 },
                     { "id": 202, "nickName": "阿布", "headImg": "http://oss.68wan.com/wannimei/audio/test/p2.jpg", "gold": 3000 },
                     { "id": 303, "nickName": "婕拉", "headImg": "http://oss.68wan.com/wannimei/audio/test/p2.jpg", "gold": 5000 }
                 ],

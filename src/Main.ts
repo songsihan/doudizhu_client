@@ -61,10 +61,10 @@ class Main extends egret.DisplayObjectContainer {
 //        var globalPid = this.GetQueryString("pid");
         //==>egret.getOption('pid');
 //        game.ModelCache.getInstance().setPid(globalPid);
-        var globalPid = egret.getOption('pid');
-        game.ModelCache.testRoomData.user = game.ModelCache.testUserData[globalPid];
+//        var globalPid = egret.getOption('pid');
+//        game.ModelCache.testRoomData.user = game.ModelCache.testUserData[globalPid];
         this._listeners = game.ProxyListener.getInstance();
-        game.ModelCache.getInstance().initUserInfo(game.ModelCache.testRoomData);//测试使用
+//        game.ModelCache.getInstance().initUserInfo(game.ModelCache.testRoomData);//测试使用
         this.gameSocket = game.WSocket.getInstance();
     }
     
