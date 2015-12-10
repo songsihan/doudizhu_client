@@ -26,8 +26,11 @@ module game {
         //初始化时调用
         public partAdded(partName:string, instance:any):void {
             super.partAdded(partName, instance);
-            TimerUtil.getInstance().addObj('play',this,1000); 
-            this.clabel.text = String(25);
+            TimerUtil.getInstance().addObj('play',this,1000);
+            var table = game.ModelCache.getInstance().getTable(); Math.ceil
+            var passSecond = Math.ceil(new Date().getTime() / 1000 - table.rTime);
+            var leftSecond = Math.max(0,20 - passSecond);
+            this.clabel.text = String(leftSecond);
             var lastCardNos: number[] = game.ModelCache.getInstance().getTable().lastCardNos;
             if(lastCardNos.length == 0)
             {
@@ -193,11 +196,6 @@ module game {
 //                game.LogUtil.log(st + "==="+table.currOpUid+" uid:"+player.uid);
                 if(table.currOpUid == player.uid && st == Constants.PLAYER_DEPOSIT)
                 {
-                    var selfevent: game.SelfEvent = new game.SelfEvent(SelfEvent.PLAY);
-                    selfevent.test = {
-                        op: 0,cards: []
-                    };
-                    game.ProxyListener.getInstance().dispatchEvent(selfevent);
                     this.removeAllElements();
                     TimerUtil.getInstance().rmObj('play');
                     return;
@@ -206,12 +204,6 @@ module game {
                 {
                     this.removeAllElements();
                     TimerUtil.getInstance().rmObj('play');
-//                    if(this.isClock)
-//                    {
-//                        this.skinName = skins.components.readySkin;
-//                        this.horizontalCenter = 0;
-//                        this.label.text = "不出";
-//                    }
                 }
             }
             

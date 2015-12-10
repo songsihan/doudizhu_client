@@ -23,7 +23,11 @@ var game;
         p.partAdded = function (partName, instance) {
             _super.prototype.partAdded.call(this, partName, instance);
             game.TimerUtil.getInstance().addObj('play', this, 1000);
-            this.clabel.text = String(25);
+            var table = game.ModelCache.getInstance().getTable();
+            Math.ceil;
+            var passSecond = Math.ceil(new Date().getTime() / 1000 - table.rTime);
+            var leftSecond = Math.max(0, 20 - passSecond);
+            this.clabel.text = String(leftSecond);
             var lastCardNos = game.ModelCache.getInstance().getTable().lastCardNos;
             if (lastCardNos.length == 0) {
                 this.unPlayBtn.enabled = false;
@@ -163,11 +167,6 @@ var game;
                 var st = table.playerSt[player.uid];
                 //                game.LogUtil.log(st + "==="+table.currOpUid+" uid:"+player.uid);
                 if (table.currOpUid == player.uid && st == game.Constants.PLAYER_DEPOSIT) {
-                    var selfevent = new game.SelfEvent(game.SelfEvent.PLAY);
-                    selfevent.test = {
-                        op: 0, cards: []
-                    };
-                    game.ProxyListener.getInstance().dispatchEvent(selfevent);
                     this.removeAllElements();
                     game.TimerUtil.getInstance().rmObj('play');
                     return;

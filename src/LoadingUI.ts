@@ -80,7 +80,7 @@ class LoadingUI extends egret.gui.SkinnableComponent {
      */ 
     public setProgress(uid:number,addValue:number,oldVale:number):void {
         var users = game.ModelCache.getInstance().getUsers(); 
-        if(addValue <= 0)
+        if(addValue < 0)
         {
             return;
         }
@@ -146,7 +146,7 @@ class LoadingUI extends egret.gui.SkinnableComponent {
 //        }
     }
     
-    private getName(str, len = 6, hasDot = true)
+    private getName(str, len = 4, hasDot = true)
     {
         var newLength = 0; 
         var newStr = ""; 

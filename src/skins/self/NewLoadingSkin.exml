@@ -10,7 +10,7 @@
 	<e:ProgressBar id="line1" skinName="skins.components.ProgressSkin" width="194" height="31" y="242" horizontalCenter="35"/>
 	<e:ProgressBar id="line2" height="31" skinName="skins.components.ProgressSkin" width="194" y="312" horizontalCenter="35"/>
 	<e:ProgressBar id="line3" width="194" height="31" skinName="skins.components.ProgressSkin" y="382" horizontalCenter="35"/>
-	<e:UIAsset width="94" height="84" source="icon_logo_png" y="105" horizontalCenter="0"/>
+	<e:UIAsset width="94" height="84" source="icon_logo_png" y="105" autoScale="false" horizontalCenter="0"/>
 	<e:Label id="name1" size="24" fontFamily="楷体" y="237" x="245" text="name1"/>
 	<e:Label id="name2" size="24" fontFamily="楷体" y="307" x="245" text="name2"/>
 	<e:Label id="pro1" text="0%" size="24" fontFamily="楷体" x="545" y="237"/>

@@ -1283,6 +1283,7 @@
 	},
 	{
 		"name":"bg_doudizhu_loading_png",
+		"scale9grid":"22,6,1104,631",
 		"type":"image",
 		"url":"assets/bg_doudizhu_loading.png"
 	},

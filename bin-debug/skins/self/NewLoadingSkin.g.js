@@ -22,7 +22,7 @@ var skins;
             );
             p.__4_i = function () {
                 var t = new egret.gui.UIAsset();
-                this.__s(t, ["height", "horizontalCenter", "source", "width", "y"], [84, 0, "icon_logo_png", 94, 105]);
+                this.__s(t, ["autoScale", "height", "horizontalCenter", "source", "width", "y"], [false, 84, 0, "icon_logo_png", 94, 105]);
                 return t;
             };
             p.line1_i = function () {

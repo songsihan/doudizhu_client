@@ -18,7 +18,53 @@ var Main = (function (_super) {
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
         this.gameInit();
+        console.log('1===width:' + this.stage.stageWidth);
+        console.log('1===height:' + this.stage.stageHeight);
+        console.log('1===scaleMode:' + this.stage.$scaleMode);
+        this.doResize();
+        console.log('2===width:' + this.stage.stageWidth);
+        console.log('2===height:' + this.stage.stageHeight);
+        console.log('2===scaleMode:' + this.stage.$scaleMode);
     };
+    /**
+     * * @param scaleMode 当前的缩放模式
+         * @param screenWidth 播放器视口宽度
+         * @param screenHeight 播放器视口高度
+         * @param contentWidth 初始化内容宽度
+         * @param contentHeight 初始化内容高度
+         *calculateStageSize(scaleMode: string,screenWidth: number,screenHeight: number,contentWidth: number,contentHeight: number): StageDisplaySize;
+    
+     */
+    p.doResize = function () {
+        var wid, hei, radio; //宽,高,像素比  
+        //获取窗口宽度  
+        if (window && window.innerWidth)
+            wid = window.innerWidth;
+        else if ((document.body) && (document.body.clientWidth))
+            wid = document.body.clientWidth;
+        //获取窗口高度  
+        if (window && window.innerHeight)
+            hei = window.innerHeight;
+        else if ((document.body) && (document.body.clientHeight))
+            hei = document.body.clientHeight;
+        //通过深入Document内部对body进行检测，获取窗口大小  
+        if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+            wid = document.documentElement.clientWidth;
+            hei = document.documentElement.clientHeight;
+        }
+        //设备像素比,这里如果获取不到就自动默认为1,如果有特殊需求可以自行修改  
+        radio = window.devicePixelRatio || 1;
+        //处理横屏
+        var resolution = { width: hei, height: wid };
+        console.log("屏幕宽:", resolution.width, "|", "屏幕高:", resolution.height, "|", "设备像素比:", radio);
+        //下面赋值给宽高适配手机浏览器
+        //        var adapter = new egret.sys.ScreenAdapter();
+        //        var _StageDisplaySize = adapter.calculateStageSize(egret.StageScaleMode.SHOW_ALL,resolution.height * radio,resolution.width * radio,resolution.height * radio,resolution.height * radio);
+        //        egret.MainContext.instance.stage.stageWidth = resolution.height * radio;
+        //        egret.MainContext.instance.stage.stageHeight = resolution.height * radio;
+        //        egret.StageDelegate.getInstance().setDesignSize(resolution.width * radio,resolution.height * radio);
+    };
+    ;
     p.GetQueryString = function (name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);

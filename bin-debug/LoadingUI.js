@@ -51,7 +51,7 @@ var LoadingUI = (function (_super) {
      */
     p.setProgress = function (uid, addValue, oldVale) {
         var users = game.ModelCache.getInstance().getUsers();
-        if (addValue <= 0) {
+        if (addValue < 0) {
             return;
         }
         if (uid == users[0].id) {
@@ -109,7 +109,7 @@ var LoadingUI = (function (_super) {
         //        }
     };
     p.getName = function (str, len, hasDot) {
-        if (len === void 0) { len = 6; }
+        if (len === void 0) { len = 4; }
         if (hasDot === void 0) { hasDot = true; }
         var newLength = 0;
         var newStr = "";

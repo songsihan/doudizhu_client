@@ -581,7 +581,8 @@ module game {
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group1.addElement(play_cards);
                             play_cards.x = 0;                            
-                            MainPanel.getInstance().bgSize1.text = table.cardNums[table.lastOpUid];
+                            var text = <string><any>(isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
+                            MainPanel.getInstance().bgSize2.text = text;
 //                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }
                         else
@@ -603,7 +604,8 @@ module game {
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group2.addElement(play_cards);
                             play_cards.right = 0;
-                            MainPanel.getInstance().bgSize2.text = table.cardNums[table.lastOpUid];
+                            var text = <string><any>(isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
+                            MainPanel.getInstance().bgSize2.text = text;
 //                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }
                         else
@@ -632,6 +634,10 @@ module game {
                         (table.lUid != player.uid && table.winUid !=table.lUid))
                     {
                         isWin = true;
+                    }
+                    var nowTime = new Date().getTime();
+                    while(new Date().getTime() - nowTime <= 2000){
+                        continue;
                     }
                     var endLayer: egret.gui.SkinnableContainer = new EndLayer(isWin);
                     MainPanel.getInstance().end.addElement(endLayer);
