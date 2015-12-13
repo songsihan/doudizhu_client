@@ -27,6 +27,7 @@ var game;
             Math.ceil;
             var passSecond = Math.ceil(new Date().getTime() / 1000 - table.rTime);
             var leftSecond = Math.max(0, 20 - passSecond);
+            var leftSecond = Math.min(20, leftSecond);
             this.clabel.text = String(leftSecond);
             var lastCardNos = game.ModelCache.getInstance().getTable().lastCardNos;
             if (lastCardNos.length == 0) {

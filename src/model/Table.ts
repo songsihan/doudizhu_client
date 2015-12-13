@@ -47,8 +47,8 @@ module game {
             this.rTime= data.rTime;
             this.cardNums = data.cardNums;
             this.playerInfos = data.playerInfos;
-            
-            
+
+            LoadingUI.getInstance().loadingEnd();
 		}
             
 		public updateTable(data,flag)

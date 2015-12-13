@@ -25,6 +25,7 @@ var game;
             this.rTime = data.rTime;
             this.cardNums = data.cardNums;
             this.playerInfos = data.playerInfos;
+            LoadingUI.getInstance().loadingEnd();
         };
         p.updateTable = function (data, flag) {
             if (flag) {

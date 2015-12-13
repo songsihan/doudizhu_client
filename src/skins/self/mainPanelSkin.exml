@@ -28,7 +28,7 @@
 	</e:Group>
 	<e:UIAsset source="word_multiple_png" width="61" height="21" size="30" x="417" y="12"/>
 	<e:Label id="multiple" width="32" text="1" textColor="0xF4BB4A" bold="true" size="22" x="488" y="9"/>
-	<e:Group id="cards" height="88" horizontalCenter="0" y="375">
+	<e:Group id="cards" height="88" horizontalCenter="0" y="356">
 	</e:Group>
 	<e:SkinnableComponent id="player1" width="34" height="28" skinName="skins.components.Bitmap_NongMinSkin" x="19" y="148"/>
 	<e:SkinnableComponent id="player3" width="34" height="28" skinName="skins.components.Bitmap_NongMinSkin" x="94" y="274"/>
@@ -38,10 +38,10 @@
 	<e:Label height="17" textAlign="center" width="68" size="10" verticalAlign="middle" id="score2" text="0" textColor="0xF2D92E" y="47" x="658"/>
 	<e:Group id="group1" width="88" height="76" x="85" y="101"/>
 	<e:Group id="group2" width="88" height="76" x="622" y="105"/>
-	<e:SkinnableContainer id="now_cards" height="76" width="88" skinName="skins.components.ContainerSkin" horizontalCenter="0" y="273"/>
+	<e:SkinnableContainer id="now_cards" height="76" width="88" skinName="skins.components.ContainerSkin" horizontalCenter="0" y="254"/>
 	<e:UIAsset source="g_png" width="9" height="11" x="19" y="324"/>
 	<e:Label id="base" text="5" width="32" textColor="0xF1AB20" bold="true" size="22" x="489" y="40"/>
-	<e:Group id="landlord" height="51" width="340" horizontalCenter="-32" y="263"/>
+	<e:Group id="landlord" height="51" width="340" horizontalCenter="-32" y="244"/>
 	<e:UIAsset id="png3" width="75" height="75" source="icon3_png" x="15" y="226"/>
 	<e:UIAsset id="png2" width="53" height="50" source="icon2_png" y="22" x="731"/>
 	<e:UIAsset id="png1" width="53" height="50" source="icon1_png" y="17" x="14"/>
@@ -50,7 +50,7 @@
 	<e:Button id="depositBtn" skinName="skins.components.ButtonTplSkin" width="107" height="43" label="取消托管" alpha="0.8" x="682" y="296"/>
 	<e:Rect height="51" width="36" x="19" y="90" strokeWeight="3" strokeAlpha="0.22" fillColor="0x155D95"/>
 	<e:Label id="bgSize1" width="39" height="29" verticalAlign="middle" textAlign="center" bold="true" size="22" y="100" textColor="0xF8F7F6" text="0" x="17"/>
-	<e:Group id="end" width="319" height="154" horizontalCenter="0.5" verticalCenter="-56"/>
+	<e:Group id="end" width="319" height="154" horizontalCenter="0.5" verticalCenter="-75"/>
 	<e:UIAsset source="g_png" width="9" height="11" y="49" x="655"/>
 	<e:UIAsset source="g_png" width="9" height="11" x="82" y="44"/>
 	<e:UIAsset source="mask1_png" width="60" height="57" x="8" y="14"/>

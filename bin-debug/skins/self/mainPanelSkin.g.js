@@ -121,7 +121,7 @@ var skins;
             p.cards_i = function () {
                 var t = new egret.gui.Group();
                 this.cards = t;
-                this.__s(t, ["height", "horizontalCenter", "y"], [88, 0, 375]);
+                this.__s(t, ["height", "horizontalCenter", "y"], [88, 0, 356]);
                 return t;
             };
             p.depositBtn_i = function () {
@@ -133,7 +133,7 @@ var skins;
             p.end_i = function () {
                 var t = new egret.gui.Group();
                 this.end = t;
-                this.__s(t, ["height", "horizontalCenter", "verticalCenter", "width"], [154, 0.5, -56, 319]);
+                this.__s(t, ["height", "horizontalCenter", "verticalCenter", "width"], [154, 0.5, -75, 319]);
                 return t;
             };
             p.group1_i = function () {
@@ -151,7 +151,7 @@ var skins;
             p.landlord_i = function () {
                 var t = new egret.gui.Group();
                 this.landlord = t;
-                this.__s(t, ["height", "horizontalCenter", "width", "y"], [51, -32, 340, 263]);
+                this.__s(t, ["height", "horizontalCenter", "width", "y"], [51, -32, 340, 244]);
                 return t;
             };
             p.leave1_i = function () {
@@ -199,7 +199,7 @@ var skins;
             p.now_cards_i = function () {
                 var t = new egret.gui.SkinnableContainer();
                 this.now_cards = t;
-                this.__s(t, ["height", "horizontalCenter", "skinName", "width", "y"], [76, 0, skins.components.ContainerSkin, 88, 273]);
+                this.__s(t, ["height", "horizontalCenter", "skinName", "width", "y"], [76, 0, skins.components.ContainerSkin, 88, 254]);
                 return t;
             };
             p.p1_i = function () {
