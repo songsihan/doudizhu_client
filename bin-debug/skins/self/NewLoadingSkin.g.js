@@ -81,7 +81,7 @@ var skins;
             };
             p.__3_i = function () {
                 var t = new egret.gui.UIAsset();
-                this.__s(t, ["bottom", "left", "right", "source", "top"], [0, 0, 0, "bg_doudizhu_loading_png", 0]);
+                this.__s(t, ["height", "horizontalCenter", "source", "width", "y"], [555, 0, "bg_doudizhu_loading_png", 800, 0]);
                 return t;
             };
             NewLoadingSkin._skinParts = ["line1", "line2", "line3", "name1", "name2", "pro1", "pro2", "pro3", "name3"];

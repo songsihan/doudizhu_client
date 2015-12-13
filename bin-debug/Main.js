@@ -18,13 +18,7 @@ var Main = (function (_super) {
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
         this.gameInit();
-        console.log('1===width:' + this.stage.stageWidth);
-        console.log('1===height:' + this.stage.stageHeight);
-        console.log('1===scaleMode:' + this.stage.$scaleMode);
-        this.doResize();
-        console.log('2===width:' + this.stage.stageWidth);
-        console.log('2===height:' + this.stage.stageHeight);
-        console.log('2===scaleMode:' + this.stage.$scaleMode);
+        //        this.doResize();
     };
     /**
      * * @param scaleMode 当前的缩放模式

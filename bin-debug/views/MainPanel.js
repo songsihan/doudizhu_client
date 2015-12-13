@@ -475,10 +475,6 @@ var game;
                         (table.lUid != player.uid && table.winUid != table.lUid)) {
                         isWin = true;
                     }
-                    var nowTime = new Date().getTime();
-                    while (new Date().getTime() - nowTime <= 2000) {
-                        continue;
-                    }
                     var endLayer = new game.EndLayer(isWin);
                     MainPanel.getInstance().end.addElement(endLayer);
                     endLayer.horizontalCenter = 0;

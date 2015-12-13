@@ -635,10 +635,6 @@ module game {
                     {
                         isWin = true;
                     }
-                    var nowTime = new Date().getTime();
-                    while(new Date().getTime() - nowTime <= 2000){
-                        continue;
-                    }
                     var endLayer: egret.gui.SkinnableContainer = new EndLayer(isWin);
                     MainPanel.getInstance().end.addElement(endLayer);
                     endLayer.horizontalCenter = 0;

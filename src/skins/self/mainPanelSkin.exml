@@ -6,7 +6,7 @@
 		<e:State name="normal"/>
 		<e:State name="disabled"/>
 	</e:states>
-	<e:UIAsset left="0" right="0" top="0" bottom="0" source="bg_blue_big_png"/>
+	<e:UIAsset left="0" right="0" top="0" source="bg_blue_big_png" height="555"/>
 	<e:Rect height="72" width="259" y="3" horizontalCenter="-10.5" strokeAlpha="0" fillAlpha="1" fillColor="0x003352"/>
 	<e:UIAsset id="leave1" source="leave_png" width="30" height="25" y="31" x="167"/>
 	<e:UIAsset id="bg3" source="bg_black_statistical_1_png" width="82" height="32" x="12" y="307"/>

@@ -47,7 +47,7 @@ var skins;
             };
             p.__3_i = function () {
                 var t = new egret.gui.UIAsset();
-                this.__s(t, ["bottom", "left", "right", "source", "top"], [0, 0, 0, "bg_blue_big_png", 0]);
+                this.__s(t, ["height", "left", "right", "source", "top"], [555, 0, 0, "bg_blue_big_png", 0]);
                 return t;
             };
             p.__4_i = function () {
