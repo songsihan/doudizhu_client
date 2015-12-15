@@ -431,8 +431,10 @@ var game;
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group1.addElement(play_cards);
                             play_cards.x = 0;
-                            var text = (isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
-                            MainPanel.getInstance().bgSize2.text = text;
+                            var size = Math.max(0, table.cardNums[table.lastOpUid]);
+                            var text = (isNaN(size) ? '0' : size);
+                            text = text == '' ? '0' : text;
+                            MainPanel.getInstance().bgSize1.text = text;
                         }
                         else {
                             game.SoundUtil.playSound(1);
@@ -450,7 +452,9 @@ var game;
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group2.addElement(play_cards);
                             play_cards.right = 0;
-                            var text = (isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
+                            var size = Math.max(0, table.cardNums[table.lastOpUid]);
+                            var text = (isNaN(size) ? '0' : size);
+                            text = text == '' ? '0' : text;
                             MainPanel.getInstance().bgSize2.text = text;
                         }
                         else {

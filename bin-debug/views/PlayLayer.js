@@ -167,7 +167,7 @@ var game;
                 var player = game.ModelCache.getInstance().getPlayer();
                 var st = table.playerSt[player.uid];
                 //                game.LogUtil.log(st + "==="+table.currOpUid+" uid:"+player.uid);
-                if (table.currOpUid == player.uid && st == game.Constants.PLAYER_DEPOSIT) {
+                if (table.currOpUid == player.uid && st == game.Constants.PLAYER_DEPOSIT && num <= 15) {
                     this.removeAllElements();
                     game.TimerUtil.getInstance().rmObj('play');
                     return;

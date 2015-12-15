@@ -580,9 +580,11 @@ module game {
                             var play_cards: egret.gui.SkinnableContainer = new egret.gui.SkinnableContainer();
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group1.addElement(play_cards);
-                            play_cards.x = 0;                            
-                            var text = <string><any>(isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
-                            MainPanel.getInstance().bgSize2.text = text;
+                            play_cards.x = 0;   
+                            var size = Math.max(0,table.cardNums[table.lastOpUid]);
+                            var text = <string><any>(isNaN(size) ? '0' : size);
+                            text = text == '' ? '0' : text;
+                            MainPanel.getInstance().bgSize1.text = text;
 //                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }
                         else
@@ -604,7 +606,9 @@ module game {
                             play_cards.skinName = new skin.CurrCardSkin(table.lastCardNos);
                             MainPanel.getInstance().group2.addElement(play_cards);
                             play_cards.right = 0;
-                            var text = <string><any>(isNaN(table.cardNums[table.lastOpUid]) ? '0' : table.cardNums[table.lastOpUid]);
+                            var size = Math.max(0,table.cardNums[table.lastOpUid]);
+                            var text = <string><any>(isNaN(size) ? '0' : size);
+                            text = text == '' ? '0' : text;
                             MainPanel.getInstance().bgSize2.text = text;
 //                            MainPanel.getInstance().cards1.skinName = new skin.CurrCardSkin([],table.cardNums[table.lastOpUid]);
                         }

@@ -56,4 +56,5 @@
 	<e:UIAsset source="mask1_png" width="60" height="57" x="8" y="14"/>
 	<e:UIAsset source="mask2_png" width="61" height="53" x="729" y="21"/>
 	<e:UIAsset source="mask3_png" width="91" height="79" y="223" x="1"/>
+	<e:Label text="11" x="3" y="4" size="5"/>
 </e:Skin>

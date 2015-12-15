@@ -127,7 +127,9 @@ var Main = (function (_super) {
         game.LogUtil.log('Main_exeTimer');
         this.sockeOverTime();
         var table = game.ModelCache.getInstance().getTable();
+        var nowTime = new Date().getTime();
         if (table.tableSt == game.Constants.TABLE_IN_GAME) {
+            LoadingUI.getInstance().loadingEnd();
             game.TimerUtil.getInstance().rmObj('main');
             this.stage.removeChild(this.loadingView);
             game.MainPanel.getInstance().panelStatus = 'reConn';
@@ -139,13 +141,15 @@ var Main = (function (_super) {
             game.TimerUtil.getInstance().addObj('ws', game.WSocket.getInstance());
         }
         if (table.tableSt == game.Constants.TABLE_LANDLORD) {
-            game.TimerUtil.getInstance().rmObj('main');
-            this.stage.removeChild(this.loadingView);
-            var selfevent = new game.SelfEvent(game.SelfEvent.INIT_TABLE);
-            game.ProxyListener.getInstance().dispatchEvent(selfevent);
-            return;
+            if (Main.isReady == 2) {
+                game.TimerUtil.getInstance().rmObj('main');
+                this.stage.removeChild(this.loadingView);
+                var selfevent = new game.SelfEvent(game.SelfEvent.INIT_TABLE);
+                game.ProxyListener.getInstance().dispatchEvent(selfevent);
+                return;
+            }
+            Main.isReady = 1;
         }
-        var nowTime = new Date().getTime();
         if (game.ModelCache.getInstance().flag == 'login') {
             var selfUid = game.ModelCache.getInstance().getUid();
             this.loadingView.setProgress(selfUid, 10, 0);
@@ -241,6 +245,7 @@ var Main = (function (_super) {
     Main.hitNum = 0;
     Main.oldItemLoadNum = 0;
     Main.lastSendPro = 0;
+    Main.isReady = -1;
     return Main;
 })(egret.DisplayObjectContainer);
 egret.registerClass(Main,"Main");

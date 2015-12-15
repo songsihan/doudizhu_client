@@ -48,7 +48,6 @@ module game {
             this.cardNums = data.cardNums;
             this.playerInfos = data.playerInfos;
 
-            LoadingUI.getInstance().loadingEnd();
 		}
             
 		public updateTable(data,flag)
@@ -120,7 +119,7 @@ module game {
                 }
                 else
                 {
-                    this.cardNums[this.lastPlayCardUid] -= this.lastCardNos.length;
+                    this.cardNums[this.lastPlayCardUid] = data['lastOpCardNum'];
                 }
             }
             if(this.tableSt == game.Constants.TABLE_END)

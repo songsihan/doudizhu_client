@@ -25,7 +25,6 @@ var game;
             this.rTime = data.rTime;
             this.cardNums = data.cardNums;
             this.playerInfos = data.playerInfos;
-            LoadingUI.getInstance().loadingEnd();
         };
         p.updateTable = function (data, flag) {
             if (flag) {
@@ -83,7 +82,7 @@ var game;
                     this.selfCardNos = game.Func.mini(this.selfCardNos, this.lastCardNos);
                 }
                 else {
-                    this.cardNums[this.lastPlayCardUid] -= this.lastCardNos.length;
+                    this.cardNums[this.lastPlayCardUid] = data['lastOpCardNum'];
                 }
             }
             if (this.tableSt == game.Constants.TABLE_END) {

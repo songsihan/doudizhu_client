@@ -8,7 +8,7 @@ var skins;
                 _super.call(this);
                 this.__s = egret.gui.setProperties;
                 this.__s(this, ["height", "width"], [480, 800]);
-                this.elementsContent = [this.__3_i(), this.__4_i(), this.leave1_i(), this.bg3_i(), this.bg2_i(), this.__5_i(), this.bgSize2_i(), this.leave2_i(), this.leave3_i(), this.robot3_i(), this.robot2_i(), this.score3_i(), this.name3_i(), this.name2_i(), this.bg1_i(), this.__6_i(), this.__7_i(), this.multiple_i(), this.cards_i(), this.player1_i(), this.player3_i(), this.player2_i(), this.name1_i(), this.score1_i(), this.score2_i(), this.group1_i(), this.group2_i(), this.now_cards_i(), this.__8_i(), this.base_i(), this.landlord_i(), this.png3_i(), this.png2_i(), this.png1_i(), this.__9_i(), this.robot1_i(), this.depositBtn_i(), this.__10_i(), this.bgSize1_i(), this.end_i(), this.__11_i(), this.__12_i(), this.__13_i(), this.__14_i(), this.__15_i()];
+                this.elementsContent = [this.__3_i(), this.__4_i(), this.leave1_i(), this.bg3_i(), this.bg2_i(), this.__5_i(), this.bgSize2_i(), this.leave2_i(), this.leave3_i(), this.robot3_i(), this.robot2_i(), this.score3_i(), this.name3_i(), this.name2_i(), this.bg1_i(), this.__6_i(), this.__7_i(), this.multiple_i(), this.cards_i(), this.player1_i(), this.player3_i(), this.player2_i(), this.name1_i(), this.score1_i(), this.score2_i(), this.group1_i(), this.group2_i(), this.now_cards_i(), this.__8_i(), this.base_i(), this.landlord_i(), this.png3_i(), this.png2_i(), this.png1_i(), this.__9_i(), this.robot1_i(), this.depositBtn_i(), this.__10_i(), this.bgSize1_i(), this.end_i(), this.__11_i(), this.__12_i(), this.__13_i(), this.__14_i(), this.__15_i(), this.__16_i()];
                 this.states = [
                     new egret.gui.State("normal", []),
                     new egret.gui.State("disabled", [])
@@ -43,6 +43,11 @@ var skins;
             p.__15_i = function () {
                 var t = new egret.gui.UIAsset();
                 this.__s(t, ["height", "source", "width", "x", "y"], [79, "mask3_png", 91, 1, 223]);
+                return t;
+            };
+            p.__16_i = function () {
+                var t = new egret.gui.Label();
+                this.__s(t, ["size", "text", "x", "y"], [5, "11", 3, 4]);
                 return t;
             };
             p.__3_i = function () {

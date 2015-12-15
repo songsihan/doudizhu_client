@@ -25,6 +25,7 @@ class Main extends egret.DisplayObjectContainer {
     private static oldItemLoadNum: number = 0;
     private static lastSendPro: number = 0;
     
+    public static isReady = -1;
     public constructor() {
         super();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
@@ -165,9 +166,11 @@ class Main extends egret.DisplayObjectContainer {
         this.sockeOverTime();
         
         var table = game.ModelCache.getInstance().getTable();
-
+        var nowTime = new Date().getTime();
+        
         if(table.tableSt == game.Constants.TABLE_IN_GAME)
         {
+            LoadingUI.getInstance().loadingEnd();
             game.TimerUtil.getInstance().rmObj('main');
             this.stage.removeChild(this.loadingView);
             game.MainPanel.getInstance().panelStatus = 'reConn';
@@ -180,14 +183,17 @@ class Main extends egret.DisplayObjectContainer {
         }
         if(table.tableSt == game.Constants.TABLE_LANDLORD) 
         {
-            game.TimerUtil.getInstance().rmObj('main');
-            this.stage.removeChild(this.loadingView);
-            
-            var selfevent: game.SelfEvent = new game.SelfEvent(game.SelfEvent.INIT_TABLE);
-            game.ProxyListener.getInstance().dispatchEvent(selfevent);
-            return;
+            if(Main.isReady == 2)//使客户端能同时进入游戏主界面
+            {
+                game.TimerUtil.getInstance().rmObj('main');
+                this.stage.removeChild(this.loadingView);
+                            
+                var selfevent: game.SelfEvent = new game.SelfEvent(game.SelfEvent.INIT_TABLE);
+                game.ProxyListener.getInstance().dispatchEvent(selfevent);
+                return;
+            }
+            Main.isReady = 1;
         }
-        var nowTime = new Date().getTime();
         if(game.ModelCache.getInstance().flag == 'login')
         {
             var selfUid = game.ModelCache.getInstance().getUid();
