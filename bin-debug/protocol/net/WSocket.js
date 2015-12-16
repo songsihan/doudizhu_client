@@ -87,6 +87,10 @@ var game;
                 }
             }
             if (JSON.stringify(WSocket.lastSendMsg) == JSON.stringify(msg)) {
+                var nowTime = new Date().getTime();
+                while (new Date().getTime() - nowTime >= 300) {
+                    continue;
+                }
                 WSocket.reSendCnt++;
                 this.ws.writeUTF(JSON.stringify(msg));
                 game.LogUtil.log("发送数据：" + JSON.stringify(msg));

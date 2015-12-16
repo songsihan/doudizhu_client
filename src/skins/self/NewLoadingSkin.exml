@@ -7,7 +7,6 @@
 		<e:State name="disabled"/>
 	</e:states>
 	<e:UIAsset height="555" width="800" source="bg_doudizhu_loading_png" horizontalCenter="0" y="0"/>
-	<e:Label size="5" text="11" x="2" y="4"/>
 	<e:ProgressBar id="line1" skinName="skins.components.ProgressSkin" width="194" height="31" y="242" horizontalCenter="35"/>
 	<e:ProgressBar id="line2" height="31" skinName="skins.components.ProgressSkin" width="194" y="312" horizontalCenter="35"/>
 	<e:ProgressBar id="line3" width="194" height="31" skinName="skins.components.ProgressSkin" y="382" horizontalCenter="35"/>

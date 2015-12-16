@@ -106,27 +106,42 @@ class LoadingUI extends egret.gui.SkinnableComponent {
         }
         if(uid == users[0].id)
         {
-            if(oldVale > 0) this.value1 = oldVale;
+            if(oldVale > 0 && oldVale+addValue <= this.value1)
+            {
+                return;
+            }
+            if(oldVale > this.value1) this.value1 = oldVale;
             this.value1 = Math.min(100,this.value1 + addValue);
             var _value1 = Math.max(0,this.value1 - 1);
             this.line1.value = _value1;
-            this.pro1.text = _value1 + "%";
+            this.pro1.text = _value1 + "%"; 
+//            oldVale > 0 && console.error("===_value1:" + _value1 + " addValue:" + addValue + " oldVal:" + oldVale);           
         } 
         else if(uid == users[1].id)
         {
-            if(oldVale > 0) this.value2 = oldVale;
+            if(oldVale > 0 && oldVale + addValue <= this.value2) 
+            {
+                return;
+            }
+            if(oldVale > this.value2) this.value2 = oldVale;
             this.value2 = Math.min(100,this.value2 + addValue);
             var _value2 = Math.max(0,this.value2 - 1);
             this.line2.value = _value2;
             this.pro2.text = _value2 + "%";
+//            oldVale > 0 && console.error("===_value2:" + _value2 + " addValue:" + addValue + " oldVal:" + oldVale);
         }
         else if(uid == users[2].id)
         {
-            if(oldVale > 0) this.value3 = oldVale;
+            if(oldVale > 0 && oldVale + addValue <= this.value3) 
+            {
+                return;
+            }
+            if(oldVale > this.value3) this.value3 = oldVale;
             this.value3 = Math.min(100,this.value3 + addValue);
             var _value3 = Math.max(0,this.value3 - 1);
             this.line3.value = _value3;
             this.pro3.text = _value3 + "%";
+//            oldVale > 0 && console.error("===_value3:" + _value3 + " addValue:" + addValue + " oldVal:" + oldVale);
         }
     }
     

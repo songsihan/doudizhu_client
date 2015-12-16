@@ -8,7 +8,7 @@ var skins;
                 _super.call(this);
                 this.__s = egret.gui.setProperties;
                 this.__s(this, ["height", "width"], [480, 800]);
-                this.elementsContent = [this.__3_i(), this.__4_i(), this.line1_i(), this.line2_i(), this.line3_i(), this.__5_i(), this.name1_i(), this.name2_i(), this.pro1_i(), this.pro2_i(), this.pro3_i(), this.name3_i()];
+                this.elementsContent = [this.__3_i(), this.line1_i(), this.line2_i(), this.line3_i(), this.__4_i(), this.name1_i(), this.name2_i(), this.pro1_i(), this.pro2_i(), this.pro3_i(), this.name3_i()];
                 this.states = [
                     new egret.gui.State("normal", []),
                     new egret.gui.State("disabled", [])
@@ -21,11 +21,6 @@ var skins;
                 }
             );
             p.__4_i = function () {
-                var t = new egret.gui.Label();
-                this.__s(t, ["size", "text", "x", "y"], [5, "11", 2, 4]);
-                return t;
-            };
-            p.__5_i = function () {
                 var t = new egret.gui.UIAsset();
                 this.__s(t, ["autoScale", "height", "horizontalCenter", "source", "width", "y"], [false, 84, 0, "icon_logo_png", 94, 105]);
                 return t;

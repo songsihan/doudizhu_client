@@ -104,7 +104,6 @@ var Main = (function (_super) {
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
             this.createScene();
             var selfUid = game.ModelCache.getInstance().getUid();
-            this.loadingView.setProgress(selfUid, 10, 0);
             game.TimerUtil.getInstance().addObj('main', this, 200);
         }
     };
@@ -152,7 +151,6 @@ var Main = (function (_super) {
         }
         if (game.ModelCache.getInstance().flag == 'login') {
             var selfUid = game.ModelCache.getInstance().getUid();
-            this.loadingView.setProgress(selfUid, 10, 0);
             game.ModelCache.getInstance().flag = 'join';
             var selfevent = new game.SelfEvent(game.SelfEvent.JT);
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
@@ -182,6 +180,7 @@ var Main = (function (_super) {
     p.sendProgress = function () {
         var proValue = this.loadingView.getSelfProValue();
         var addValue = proValue - Main.lastSendPro;
+        //        console.error("selfValue:" + proValue + "    addValue:" + addValue);
         var data = protocol.Test.tReq(addValue, proValue);
         game.WSocket.getInstance().sendJsonMsg(data);
         Main.lastSendPro = proValue;
@@ -219,9 +218,9 @@ var Main = (function (_super) {
     p.onResourceProgress = function (event) {
         if (event.groupName == "preload") {
             var selfUid = game.ModelCache.getInstance().getUid();
-            var newAddValue = Math.ceil(event.itemsLoaded * 100 * 0.8 / event.itemsTotal);
-            var oldAddValue = Math.ceil(Main.oldItemLoadNum * 100 * 0.8 / event.itemsTotal);
-            var addValue = newAddValue - oldAddValue;
+            var newAddValue = Math.floor(event.itemsLoaded * 100 / event.itemsTotal);
+            //            console.error("load:" + event.itemsLoaded + " total:" + event.itemsTotal + " curr:" + newAddValue);
+            var addValue = newAddValue - Main.oldItemLoadNum;
             this.loadingView.setProgress(selfUid, addValue, 0);
             Main.oldItemLoadNum = newAddValue;
             this.sendProgress();

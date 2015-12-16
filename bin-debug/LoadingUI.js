@@ -73,7 +73,10 @@ var LoadingUI = (function (_super) {
             return;
         }
         if (uid == users[0].id) {
-            if (oldVale > 0)
+            if (oldVale > 0 && oldVale + addValue <= this.value1) {
+                return;
+            }
+            if (oldVale > this.value1)
                 this.value1 = oldVale;
             this.value1 = Math.min(100, this.value1 + addValue);
             var _value1 = Math.max(0, this.value1 - 1);
@@ -81,7 +84,10 @@ var LoadingUI = (function (_super) {
             this.pro1.text = _value1 + "%";
         }
         else if (uid == users[1].id) {
-            if (oldVale > 0)
+            if (oldVale > 0 && oldVale + addValue <= this.value2) {
+                return;
+            }
+            if (oldVale > this.value2)
                 this.value2 = oldVale;
             this.value2 = Math.min(100, this.value2 + addValue);
             var _value2 = Math.max(0, this.value2 - 1);
@@ -89,7 +95,10 @@ var LoadingUI = (function (_super) {
             this.pro2.text = _value2 + "%";
         }
         else if (uid == users[2].id) {
-            if (oldVale > 0)
+            if (oldVale > 0 && oldVale + addValue <= this.value3) {
+                return;
+            }
+            if (oldVale > this.value3)
                 this.value3 = oldVale;
             this.value3 = Math.min(100, this.value3 + addValue);
             var _value3 = Math.max(0, this.value3 - 1);
