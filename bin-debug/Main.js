@@ -155,7 +155,6 @@ var Main = (function (_super) {
             var selfevent = new game.SelfEvent(game.SelfEvent.JT);
             game.ProxyListener.getInstance().dispatchEvent(selfevent);
             game.ModelCache.getInstance().timerTime = nowTime;
-            this.sendProgress();
         }
         else if ((nowTime - game.ModelCache.getInstance().timerTime) > 90000
             && game.ModelCache.getInstance().flag == 'join') {
@@ -171,17 +170,17 @@ var Main = (function (_super) {
             tipLayer.y = 30;
         }
         else if (Main.hitNum >= 5) {
-            Main.hitNum = 0;
             this.sendProgress();
         }
         this.loadingView.setImg();
         Main.hitNum++;
     };
     p.sendProgress = function () {
+        Main.hitNum = 0;
         var proValue = this.loadingView.getSelfProValue();
         var addValue = proValue - Main.lastSendPro;
         //        console.error("selfValue:" + proValue + "    addValue:" + addValue);
-        var data = protocol.Test.tReq(addValue, proValue);
+        var data = protocol.Test.tReq(addValue, Main.lastSendPro);
         game.WSocket.getInstance().sendJsonMsg(data);
         Main.lastSendPro = proValue;
     };

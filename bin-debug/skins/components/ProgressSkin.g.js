@@ -23,7 +23,7 @@ var skins;
             p.thumb_i = function () {
                 var t = new egret.gui.Rect();
                 this.thumb = t;
-                this.__s(t, ["fillColor", "height", "verticalCenter", "width", "x"], [0x2ECC71, 11, 0, 24, 0]);
+                this.__s(t, ["fillColor", "height", "verticalCenter", "width", "x"], [0x2ECC71, 11, 0, 0, 0]);
                 return t;
             };
             p.track_i = function () {

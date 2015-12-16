@@ -7,5 +7,5 @@
 		<e:State name="disabled"/>
 	</e:states>
 	<e:Rect id="track" fillColor="0x3C3F3F" width="185" height="11" x="0" verticalCenter="0"/>
-	<e:Rect id="thumb" width="24" height="11" x="0" verticalCenter="0" fillColor="0x2ECC71"/>
+	<e:Rect id="thumb" width="0" height="11" x="0" verticalCenter="0" fillColor="0x2ECC71"/>
 </e:Skin>

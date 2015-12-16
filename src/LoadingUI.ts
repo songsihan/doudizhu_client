@@ -8,19 +8,19 @@ class LoadingUI extends egret.gui.SkinnableComponent {
     public name1: egret.gui.Label;
     public pro1:egret.gui.Label;
     public line1:egret.gui.ProgressBar;
-    public value1 = 0;//进度值 满值100
+    public value1:number = 0;//进度值 满值100
         
     public png2: egret.gui.UIAsset;
     public name2: egret.gui.Label;
     public pro2:egret.gui.Label;
     public line2:egret.gui.ProgressBar;
-    public value2 = 0;
+    public value2: number = 0;
         
     public png3: egret.gui.UIAsset;
     public name3: egret.gui.Label;
     public pro3:egret.gui.Label;
     public line3:egret.gui.ProgressBar;
-    public value3 = 0;
+    public value3: number = 0;
     
     private static _instance:LoadingUI;             
     public static getInstance():any {
@@ -106,7 +106,7 @@ class LoadingUI extends egret.gui.SkinnableComponent {
         }
         if(uid == users[0].id)
         {
-            if(oldVale > 0 && oldVale+addValue <= this.value1)
+            if(oldVale > 0 && oldVale + addValue <= this.value1)
             {
                 return;
             }
